@@ -35,7 +35,7 @@ public class Airplane {
         this.fuel = fuel;
     }
 
-    public int getFuel() {
+    private int getFuel() {
         return fuel;
     }
 
@@ -45,6 +45,6 @@ public class Airplane {
     }
 
     public void fillUp(int n) {
-        this.fuel += n;
+        fuel += n;
     }
 }
