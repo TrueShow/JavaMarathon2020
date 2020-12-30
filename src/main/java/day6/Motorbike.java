@@ -29,7 +29,7 @@ public class Motorbike {
 
     public Integer yearDifference(int inputYear) {
         if (inputYear < this.yearOfManufacture) {
-            System.out.println("Неверные данные");
+            return this.yearOfManufacture - inputYear;
         }
         return inputYear - this.yearOfManufacture;
     }
