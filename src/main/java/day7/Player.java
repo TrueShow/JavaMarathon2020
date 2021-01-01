@@ -2,22 +2,21 @@ package day7;
 
 public class Player {
     private int stamina;
-    private final int MAX_STAMINA;
-    private final int MIN_STAMINA;
+    private final static int MAX_STAMINA = 100;
+    private final static int MIN_STAMINA = 0;
     private static int countPlayers = 0;
 
     public Player(int stamina) {
         this.stamina = stamina;
-        this.MAX_STAMINA = 100;
-        this.MIN_STAMINA = 0;
-        if (countPlayers >= 6) {
-            countPlayers = 6;
-        } else {
+        if (countPlayers < 6) {
             countPlayers++;
         }
     }
 
     public int getStamina() {
+        if (this.stamina < 0) {
+            return this.stamina = 0;
+        }
         return stamina;
     }
 
@@ -26,11 +25,12 @@ public class Player {
     }
 
     public void run() {
-        this.stamina--;
-        if (this.stamina < MIN_STAMINA) {
-            this.stamina = 0;
+        if (stamina == 0) {
+            return;
         }
-        else if (this.stamina == MIN_STAMINA) {
+        stamina--;
+
+        if (stamina == 0) {
             countPlayers--;
         }
     }
