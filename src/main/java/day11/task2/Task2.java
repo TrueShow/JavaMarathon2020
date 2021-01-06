@@ -12,15 +12,27 @@ public class Task2 {
         Shaman shaman = new Shaman();
         Magician magician = new Magician();
 
-        warrior.physicalAttack(paladin);
-        paladin.physicalAttack(magician);
+        warrior.physAttack(paladin);
+        System.out.println(paladin);
+
+        paladin.physAttack(magician);
+        System.out.println(magician);
+
         shaman.healTeammate(magician);
+        System.out.println(magician);
+
         magician.magicalAttack(paladin);
-        shaman.physicalAttack(warrior);
+        System.out.println(paladin);
+
+        shaman.physAttack(warrior);
+        System.out.println(warrior);
+
         paladin.healHimself();
+        System.out.println(paladin);
         System.out.println();
         for (int i = 0; i < 5; i++) {
-            warrior.physicalAttack(magician);
+            warrior.physAttack(magician);
+            System.out.println(magician);
         }
 
     }

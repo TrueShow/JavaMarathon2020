@@ -3,12 +3,11 @@ package day11.task1;
 public class Courier implements Worker {
     private int salary;
     private boolean isPayed;
-    Warehouse warehouse;
+    private Warehouse warehouse;
+    private static final int TASK_SALARY = 100;
 
     public Courier(Warehouse warehouseInput) {
-        this.salary = 0;
-        this.isPayed = false;
-        warehouse = warehouseInput;
+        this.warehouse = warehouseInput;
     }
 
     public int getSalary() {
@@ -29,8 +28,8 @@ public class Courier implements Worker {
 
     @Override
     public void doWork() {
-        salary += 100;
-        warehouse.countDeliveredOrders++;
+        salary += TASK_SALARY;
+        warehouse.incrementCountDeliveredOrders();
     }
 
     @Override

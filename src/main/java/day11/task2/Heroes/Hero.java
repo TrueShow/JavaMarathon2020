@@ -1,16 +1,27 @@
 package day11.task2.Heroes;
 
-public abstract class Hero {
-    private int health;
-    private float physDef;
-    private float magicDef;
-    private int physAttack;
-    private int magicAttack;
+import day11.task2.Interfaces.PhysAttack;
 
-    public abstract void takeDamage(int amount, float def);
-    public abstract float getPhysDef();
-    public abstract float getMagicDef();
-    public abstract int getHealth();
-    public abstract void heal(int amount);
+public abstract class Hero implements PhysAttack {
+    static final int MAX_HEALTH = 100;
+    static final int MIN_HEALTH = 0;
 
+    int health;
+    float physDef;
+    float magicDef;
+    int physAtt;
+
+    public Hero() {
+        this.health = 100;
+    }
+
+    @Override
+    public void physAttack(Hero hero) {
+        float attackScore = physAtt - physAtt * hero.physDef;
+        if (hero.health - attackScore < MIN_HEALTH) {
+            hero.health = MIN_HEALTH;
+        } else {
+            hero.health -= attackScore;
+        }
+    }
 }

@@ -1,8 +1,8 @@
 package day11.task1;
 
 public class Warehouse {
-    public int countPickedOrders;
-    public int countDeliveredOrders ;
+    private int countPickedOrders;
+    private int countDeliveredOrders ;
 
     public int getCountPickedOrders() {
         return countPickedOrders;
@@ -18,5 +18,13 @@ public class Warehouse {
                 "Заказов собрано = " + countPickedOrders +
                 ", Заказов доставлено = " + countDeliveredOrders +
                 '}';
+    }
+
+    public void incrementCountPickedOrders() {
+        countPickedOrders++;
+    }
+
+    public void incrementCountDeliveredOrders() {
+        countDeliveredOrders++;
     }
 }
