@@ -24,10 +24,12 @@ public class Task1 {
                 sum += list.get(i);
             }
             if (list.size() != 10) {
-                throw new RuntimeException("Некорректный входной файл");
+                throw new Exception();
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
+        } catch (Exception e) {
+            System.out.println("Некорректный входной файл");
         }
         return sum;
     }
